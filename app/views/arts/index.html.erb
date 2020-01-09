@@ -17,8 +17,9 @@
   </thead>
 
   <tbody>
-<div class="header-height"></div>
-     <div class="header">
+<img class="img" src="https://s1.1zoom.me/b4343/921/Waves_Pictorial_art_Japan_Mount_Fuji_Japanese_540457_1920x1080.jpg" alt="" />
+<h1 class="h1centre">Musée d'art</h1>
+   <div class="header">
             <ul id="menu-deroulant">
  <ul id="menu-demo2">
   <li><a href="#">Accueil</a>
@@ -30,7 +31,7 @@
   </li>
   <li><a href="#">Pièces</a>
     <ul>
-      <li><a href="#">Jaune</a></li>
+      <li><a href="#Jaune">Jaune</a></li>
       <li><a href="#">Rouge</a></li>
       <li><a href="#">Bleu</a></li>
       <li><a href="#">Noir</a></li>
@@ -38,22 +39,23 @@
   </li>
 </ul>
       </div> 
-    <% @arts.each do |art| %>
-      <tr>
-        <td><%= art.title %></td>
-        <td><%= art.author %></td>
-        <td><%= art.description %></td>
-        <td><%= art.date %></td>
-        <td><img src="<%= art.photo %>"></td>
-        <td><%= art.color %></td>
-        <td><%= link_to 'Show', art %></td>
-        <td><%= link_to 'Edit', edit_art_path(art) %></td>
-        <td><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+      <h1 class="pt" id="Jaune"></h1>
+      <h1 id="Jaune"> Jaune</h1>
+      <% @arts.each do |art| %>
+      <%= art.title %>
+      <%= art.author %>
+      <%= art.description %>
+      <%= art.date %>
+      <img src="<%= art.photo %>">
+      <%= art.color %>
+      <%= link_to 'Show', art %>
+      <%= link_to 'Edit', edit_art_path(art) %>
+      <%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Art', new_art_path %>
+
