@@ -4,6 +4,7 @@
 
 <table>
   <thead>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet"> 
     <tr>
       <th>Title</th>
       <th>Author</th>
@@ -16,11 +17,26 @@
   </thead>
 
   <tbody>
-
-    <div class="header-height"></div>
+<div class="header-height"></div>
      <div class="header">
-     <h1>Header</h1>
-      <p>My supercool header</p>
+            <ul id="menu-deroulant">
+ <ul id="menu-demo2">
+  <li><a href="#">Accueil</a>
+    <ul>
+      <li><a href="#">Présentation</a></li>
+      <li><a href="#">Artistes exposés</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Pièces</a>
+    <ul>
+      <li><a href="#">Jaune</a></li>
+      <li><a href="#">Rouge</a></li>
+      <li><a href="#">Bleu</a></li>
+      <li><a href="#">Noir</a></li>
+    </ul>
+  </li>
+</ul>
       </div> 
     <% @arts.each do |art| %>
       <tr>
