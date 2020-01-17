@@ -11,8 +11,25 @@
 
   <body>
 
- 
+    <nav>
+       <div class="header">
+          <ul id="menu-deroulant">
+            <ul id="menu-demo2">
+              <li><a href="#home">Accueil</a></li>
+              <li><a href="#">Pièces</a>
+                <ul>
+                  <% navigation_themes.each do |theme| %>
+                    <li><a href="#"><%= theme.name %></a></li>
+                  <% end %>
+                </ul>
+              </li> 
+            </ul>
+          </ul>
+        </div> 
+    </nav>
 
     <%= yield %>
+
+
   </body>
 </html>

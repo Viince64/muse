@@ -2,52 +2,6 @@
 
 <h1>Arts</h1>
 
-<table>
-  <thead>
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet"> 
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th>Photo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-<img class="img" src="https://s1.1zoom.me/b4343/921/Waves_Pictorial_art_Japan_Mount_Fuji_Japanese_540457_1920x1080.jpg" alt="" />
-<h1 class="h1centre">Musée d'art</h1>
-   <div class="header">
-            <ul id="menu-deroulant">
- <ul id="menu-demo2">
-  <li><a href="#home">Accueil</a>
-  </li>
-  <li><a href="#">Pièces</a>
-    <ul>
-      <li><a href="#Jaune">Jaune</a></li>
-      <li><a href="#">Rouge</a></li>
-      <li><a href="#">Bleu</a></li>
-      <li><a href="#">Noir</a></li>
-    </ul>
-  </li>
-</ul>
-      </div> 
-      <h1 class="pt" id="Jaune"></h1>
-      <h1 class="h1s" id="Jaune"> Jaune</h1>
-      <% @arts.each do |art| %>
-      <h1 src="<%= art.title %>">
-      <%= art.author %>
-      <%= art.description %>
-      <%= art.date %>
-      <img class="imgs" src="<%= art.photo %>">
-      <%= art.color %>
-      <%= link_to 'Show', art %>
-      <%= link_to 'Edit', edit_art_path(art) %>
-      <%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-  </tbody>
-</table>
 
 <br>
 
