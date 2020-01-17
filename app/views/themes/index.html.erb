@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Arts</h1>
-
 <table>
   <thead>
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet"> 
@@ -30,19 +28,20 @@
     </ul>
   </li>
   <li><a href="#">Pièces</a>
-    <ul>
-      <li><a href="#Jaune">Jaune</a></li>
-      <li><a href="#">Rouge</a></li>
-      <li><a href="#">Bleu</a></li>
-      <li><a href="#">Noir</a></li>
-    </ul>
-  </li>
-</ul>
-      </div> 
-      <h1 class="pt" id="Jaune"></h1>
-      <h1 class="h1s" id="Jaune"> Jaune</h1>
-      <% @arts.each do |art| %>
-      <h1 src="<%= art.title %>">
+      <ul>
+        <% @themes.each do |theme| %>
+          <li><a href="#<%= theme.name %>"><%= theme.name %></a></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+  </div> 
+    <% @themes.each do |theme| %>
+      <h1 class="pt" id="<%= theme.name %>"></h1>
+      <h1 class="h1s" style="color: #<%= theme.couleurs %>"><%= theme.name %></h1>
+      <% theme.arts.each do |art| %>
+  
+      <h2 src="<%= art.title %>"></h2>
       <%= art.author %>
       <%= art.description %>
       <%= art.date %>
@@ -51,11 +50,12 @@
       <%= link_to 'Show', art %>
       <%= link_to 'Edit', edit_art_path(art) %>
       <%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
+     <% end %>
+    <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Art', new_art_path %>
+<%= link_to 'New Art', new_theme_path %>
 

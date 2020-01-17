@@ -41,6 +41,11 @@
     <%= form.text_field :color %>
   </div>
 
+  <div class="field">
+    <%= form.label :theme_id %>
+    <%= form.select :theme_id, [["Rouge", 1],["Vert", 2]] %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

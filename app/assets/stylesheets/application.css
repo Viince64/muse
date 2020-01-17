@@ -133,7 +133,20 @@ color: #737373;
 	font-family: 'Kaushan Script', cursive;
 	color: #FFE800;
 }
+
 .pt{
 	position:absolute;
 	margin-top:-5%;
+}
+
+.h1s {
+	text-align:center;
+	font-size: 50px;
+	font-family: 'Kaushan Script', cursive;
+	color: #FFE800;
+}
+
+.imgs {
+height:200px; 
+
 }

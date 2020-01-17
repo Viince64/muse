@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p id="notice"><%= notice %></p>
+
+<img class="img" src="https://s1.1zoom.me/b4343/921/Waves_Pictorial_art_Japan_Mount_Fuji_Japanese_540457_1920x1080.jpg" alt="" />
+<h1 class="h1centre">Musée d'art</h1>
+<div class="header">
+    <ul id="menu-deroulant">
+ 		<ul id="menu-demo2">
+  			<li><a href="#">Accueil</a>
+	    		<ul>
+	     			<li><a href="#">Présentation</a></li>
+	      			<li><a href="#">Artistes exposés</a></li>
+	      			<li><a href="#">Contact</a></li>
+	    		</ul>
+  			</li>
+  			<li><a href="#">Pièces</a>
+    			<ul>
+    				<% @themes.each do |theme| %>
+			        	<li><a href="content"><%= theme.name %></a></li>
+    				<% end %>
+		      	</ul>
+		  	</li>
+  		</ul>
+  	</ul>
+</div> 
+
+
+
+<h1 class="pt" id="content"></h1>
+<h1 class="h1s" style="color: #<%= @theme.couleurs %>"><%= @theme.name %></h1>
+    <% @theme.arts.each do |art| %>
+    	<div>
+		    <h1 src="<%= art.title %>"></h1>
+		    <%= art.author %>
+		    <%= art.description %>
+		    <%= art.date %>
+		    <img class="imgs" src="<%= art.photo %>">
+		    <%= art.color %>
+		    <%= link_to 'Show', art %>
+		    <%= link_to 'Edit', edit_art_path(art) %>
+		    <%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %>
+    	</div>
+      
+    <% end %>
+
+
+<%= link_to 'New Art', new_theme_path %>
+
+
+<%= link_to 'Edit', edit_theme_path(@theme) %> |
+<%= link_to 'Back', themes_path %>
